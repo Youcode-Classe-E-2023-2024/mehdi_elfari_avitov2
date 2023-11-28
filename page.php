@@ -16,13 +16,18 @@ if (isset($_GET['id'])) {
     $title = $_POST['product_title'];
     $description = $_POST['product_description'];
     $price = $_POST['product_price'];
+    $img = file_get_contents($_FILES['product_picture']["tmp_name"]);
 
+    $requete = "INSERT INTO annonces (title, description, price, img) VALUES (?, ?, ?, ?)";
 
-    move_uploaded_file($product_picture_tmp, "./img/$product_picture_name");
+    // Prepare the statement
+    $stmt = mysqli_prepare($con, $requete);
 
-    $requete = "INSERT INTO annonces (title,description,price) VALUES('$title','$description','$price')";
-    $res = mysqli_query($con, $requete);
-    if ($res) {
+    // Bind parameters and execute the statement
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "ssis", $title, $description, $price, $img);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
         // echo "<h1>INSERTION AVEC SUCCESS</h1>";
         header('Location:dash.php');
     } else {

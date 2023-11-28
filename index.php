@@ -110,7 +110,7 @@
         ?>
             <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 p-4">
                 <div class="bg-white shadow-md rounded-lg p-4">
-                    <img src="<?php echo $rows['img']; ?>" alt="Annonce Image" class="w-full h-auto mb-4 rounded">
+                    <img src="data:image/jpeg;base64,<?php echo base64_encode($rows['img']); ?>" alt="Annonce Image" class="w-full h-auto mb-4 rounded">
                     <p class="text-lg font-bold"><?php echo $rows['title']; ?></p>
                     <p class="text-lg font-bold"><?php echo $rows['description']; ?></p>
                     <p><?php echo $rows['price']; ?></p>
@@ -132,6 +132,28 @@
 
 
     </div>
+    <footer class="bg-gray-800 text-white mt-auto">
+        <div class="container mx-auto py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="col-span-1 md:col-span-2 mx-20">
+                    <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit massa vel justo rhoncus.</p>
+                    <p class="mt-4">Email: contact@example.com</p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">Follow Us</h2>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white">Facebook</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white">Twitter</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-300 hover:text-white">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-700 w-auto">
+            <p class="text-center text-gray-400">&copy; <?php echo date("Y"); ?> Your Company. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 
