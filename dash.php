@@ -95,8 +95,8 @@
                             echo "<td>" . $row['description'] . "</td>";
                             echo "<td>" . $row['price'] . "</td>";
                             echo "<td>";
-                            echo "<a href='dashboard.php?id=" . $row['id'] . "' class='btn btn-info btn-sm mr-2'>Modifier</a>";
-                            echo "<a href='delete.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm'>Supprimer</a>";
+                            echo "<a href='update.php?id=" . $row['id'] . "' class='btn btn-info btn-sm mr-2'>Modifier</a>";
+                            echo "<a href='delete.php?id=" . $row['id'] . "&admin=true" . "' class='btn btn-danger btn-sm'>Supprimer</a>";
                             echo "</td>";
                             echo "</tr>";
                         }

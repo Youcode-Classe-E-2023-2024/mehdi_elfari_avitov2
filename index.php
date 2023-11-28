@@ -14,7 +14,7 @@
     }
 </style>
 
-<body>
+<body class="flex flex-col min-h-screen">
     <?php
     include 'connexion.php';
 
@@ -135,7 +135,7 @@
     <footer class="bg-gray-800 text-white mt-auto">
         <div class="container mx-auto py-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="col-span-1 md:col-span-2 mx-20">
+                <div class="col-span-1 md:col-span-2 mx-32">
                     <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit massa vel justo rhoncus.</p>
                     <p class="mt-4">Email: contact@example.com</p>
